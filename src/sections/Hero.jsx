@@ -9,7 +9,7 @@ import { useMediaQuery } from "react-responsive";
 import { calculateSizes } from "../constants/index.js"
 import Target from "../components/Target.jsx";
 import ReactLogo from "../components/ReactLogo.jsx";
-import Cube from "../components/cube";
+import Cube from "../components/Cube.jsx";
 import Rings from "../components/Rings.jsx";
 import HeroCamera from "../components/HeroCamera.jsx";
 import Button from "../components/Button.jsx";
