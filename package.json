@@ -7,8 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview",
-    "deploy": "vite build && gh-pages -d dist"
+    "preview": "vite preview"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
@@ -19,9 +18,11 @@
     "leva": "^0.9.35",
     "lucide-react": "^0.468.0",
     "maath": "^0.10.8",
+    "next-themes": "^0.4.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-globe.gl": "^2.27.6",
+    "react-icon-cloud": "^4.1.6",
     "react-responsive": "^10.0.0",
     "three": "^0.170.0"
   },

@@ -1,6 +1,6 @@
 /* From Uiverse.io by andrew-demchenk0 */
 .form {
-	--input-focus: #002e60;
+	--input-focus: #2d8cf0;
 	--font-color: #fefefe;
 	--font-color-sub: #7e7e7e;
 	--bg-color: #111;
@@ -86,8 +86,8 @@
 }
 
 .button-confirm {
-	margin: 50px auto 0 auto;
-	width: 120px;
+	width: 100%;
+	max-width: 200px;
 	height: 40px;
 	border-radius: 5px;
 	border: 2px solid var(--main-color);
@@ -97,11 +97,8 @@
 	font-weight: 600;
 	color: var(--font-color);
 	cursor: pointer;
-}
-
-.move-up {
-	margin-top: 4px;
-	/* Adjust this value to move the button up further */
+	margin: 0 auto;
+	display: block;
 }
 
 /* Tooltipls ul */
@@ -193,4 +190,13 @@ ul {
 .example-2 .icon-content a[data-social="github"] .filled,
 .example-2 .icon-content a[data-social="github"]~.tooltip {
 	background-color: #24262a;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+	border: none;
+	/* Ensure no unintended borders */
+	box-shadow: none;
+	/* Remove unnecessary shadows */
 }
