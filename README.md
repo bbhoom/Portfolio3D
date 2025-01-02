@@ -1,6 +1,6 @@
 # Portfolio3D 🎨
 
-A visually stunning 3D portfolio website showcasing projects and skills using React, Three.js, and GSAP.
+A visually stunning 3D portfolio website showcasing projects and skills using React and Three.js.
 
 ## 🌐 Live Demo
 [Visit the Live Website](https://bbhoom.github.io/Portfolio3D)
