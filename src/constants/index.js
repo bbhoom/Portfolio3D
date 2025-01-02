@@ -48,7 +48,7 @@ export const myProjects = [
             {
                 id: 2,
                 name: 'SQL',
-                path: 'assets/sql.png',
+                path: '/Portfolio3D/assets/sql.png',
             },
         ],
     },
@@ -69,12 +69,12 @@ export const myProjects = [
             {
                 id: 1,
                 name: 'React.js',
-                path: '/assets/react.svg',
+                path: '/Portfolio3D/assets/react.svg',
             },
             {
                 id: 2,
                 name: 'BootstrapCSS',
-                path: 'assets/bootstrap.png',
+                path: '/Portfolio3D/assets/bootstrap.png',
             },
         ],
     },
@@ -126,7 +126,7 @@ export const myProjects = [
             {
                 id: 2,
                 name: 'Unity',
-                path: '/assets/unity.png',
+                path: '/Portfolio3D/assets/unity.png',
             },
         ],
     },
@@ -185,7 +185,7 @@ export const myProjects = [
             {
                 id: 2,
                 name: 'TailwindCSS',
-                path: '/assets/streamlit.png',
+                path: '/Portfolio3D/assets/streamlit.png',
             },
         ],
     },
