@@ -110,7 +110,7 @@ export const myProjects = [
 
         href: 'https://github.com/bbhoom/Donkey-Kong',
         texture: '/Portfolio3D/textures/project/project4.mp4',
-        logo: '/Portfolio3D/Portfolio3D/assets/project-logo4.png',
+        logo: '/Portfolio3D/assets/project-logo4.png',
         logoStyle: {
             backgroundColor: '#0E1F38',
             border: '0.2px solid #0E2D58',
