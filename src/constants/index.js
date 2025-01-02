@@ -31,7 +31,7 @@ export const myProjects = [
         subdesc:
             'Built with Python and MySQL, The backend utilizes Python and MySQL with a database comprising three tables: Users, Languages, and Language-Keys. A simple, efficient interface ensures easy access to personalized encryption tools.',
         href: 'https://github.com/bbhoom/codeleza-encryption-tool',
-        texture: '/textures/project/project1.mp4',
+        texture: '/Portfolio3D/textures/project/project1.mp4',
         logo: '/Portfolio3D/assets/project-logo1.png',
         logoStyle: {
             backgroundColor: '#2A1816',
@@ -57,7 +57,7 @@ export const myProjects = [
         desc: 'BudgetApp is an intuitive budgeting app built with React and Bootstrap, designed to make managing personal finances simple and efficient. It empowers users to track expenses, set savings goals, and analyze spending patterns with ease.',
         subdesc: "With BudgetApp, users can enjoy a seamless, responsive interface that combines React's dynamic capabilities with Bootstrap's sleek design, making financial planning straightforward and accessible.",
         href: 'https://github.com/bbhoom/BudgetApp',
-        texture: '/textures/project/project2.mp4',
+        texture: '/Portfolio3D/textures/project/project2.mp4',
         logo: '/Portfolio3D/assets/project-logo2.png',
         logoStyle: {
             backgroundColor: '#13202F',
@@ -84,7 +84,7 @@ export const myProjects = [
         subdesc: 'Built with Pygame in python, this project showcases smooth animations, responsive controls, and a touch of retro charm, offering both entertainment and a demonstration of game development skills.',
 
         href: 'https://github.com/bbhoom/Pac-man-Game',
-        texture: '/textures/project/project3.mp4',
+        texture: '/Portfolio3D/textures/project/project3.mp4',
         logo: '/Portfolio3D/assets/project-logo3.png',
         logoStyle: {
             backgroundColor: '#60f5a1',
@@ -109,7 +109,7 @@ export const myProjects = [
         subdesc: 'Leveraging the power of Unity and C#, this project features immersive environments, fluid character movements, and a faithful recreation of the beloved arcade classic, showcasing advanced game development techniques.',
 
         href: 'https://github.com/bbhoom/Donkey-Kong',
-        texture: '/textures/project/project4.mp4',
+        texture: '/Portfolio3D/textures/project/project4.mp4',
         logo: '/Portfolio3D/Portfolio3D/assets/project-logo4.png',
         logoStyle: {
             backgroundColor: '#0E1F38',
@@ -135,7 +135,7 @@ export const myProjects = [
         desc: 'PlagiarismPro is a powerful application designed to accurately detect and visualize plagiarism. It analyzes text input against online sources using advanced algorithms and presents results with clear, intuitive visualizations.',
         subdesc: 'Built with a React frontend featuring react-gauge-chart for dynamic visual feedback, and a Django backend utilizing BeautifulSoup, Selenium, and Scikit-Learn for TF-IDF and cosine similarity calculations, PlagiarismPro leverages the Google Custom Search API to deliver precise and efficient plagiarism detection.',
         href: 'https://github.com/bbhoom/Plagarism-Detector',
-        texture: '/textures/project/project6.mp4',
+        texture: '/Portfolio3D/textures/project/project6.mp4',
         logo: '/Portfolio3D/assets/project-logo6.png',
         logoStyle: {
             backgroundColor: '#60f5a1',
@@ -168,7 +168,7 @@ export const myProjects = [
         desc: 'Talk-Tuah Therapist is an AI-driven application designed to offer empathetic and personalized mental health support. It uses advanced AI to understand user emotions and provide thoughtful guidance for emotional well-being.',
         subdesc: 'Developed with Python, Streamlit, and the GeminiAI API, Talk-Tuah Therapist delivers an accessible and user-friendly platform, bringing mental health support to your fingertips.',
         href: 'https://github.com/cupnoodles7/talk_tuah_therapist',
-        texture: '/textures/project/project5.mp4',
+        texture: '/Portfolio3D/textures/project/project5.mp4',
         logo: '/Portfolio3D/assets/project-logo5.png',
         logoStyle: {
             backgroundColor: '#1C1A43',
