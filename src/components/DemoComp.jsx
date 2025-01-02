@@ -9,7 +9,7 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 const DemoComp = (props) => {
     const group = useRef()
-    const { nodes, materials } = useGLTF('/models/computer.glb')
+    const { nodes, materials } = useGLTF('https://bbhoom.github.io/Portfolio3D/models/computer.glb')
     const txt = useVideoTexture(props.texture ? props.texture : '/textures/project/project1.mp4')
 
     useEffect(() => {
@@ -1013,5 +1013,5 @@ const DemoComp = (props) => {
     )
 }
 
-useGLTF.preload('/models/computer.glb')
+useGLTF.preload('/Portfolio3D/models/computer.glb')
 export default DemoComp;

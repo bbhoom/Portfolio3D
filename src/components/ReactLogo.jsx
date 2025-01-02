@@ -2,7 +2,7 @@ import React from 'react'
 import { Float, useGLTF } from '@react-three/drei'
 
 const ReactLogo = (props) => {
-    const { nodes, materials } = useGLTF('/models/react.glb')
+    const { nodes, materials } = useGLTF('https://bbhoom.github.io/Portfolio3D/models/react.glb')
     return (
         <Float floatIntensity={1}>
             <group position={[8, 8, 0]} scale={0.5} {...props} ispose={null} >
@@ -20,5 +20,5 @@ const ReactLogo = (props) => {
     )
 }
 
-useGLTF.preload('/models/react.glb')
+useGLTF.preload('/Portfolio3D/models/react.glb')
 export default ReactLogo

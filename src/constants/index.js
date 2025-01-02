@@ -22,38 +22,6 @@ export const navLinks = [
 ];
 
 export const clientReviews = [
-    {
-        id: 1,
-        name: 'Emily Johnson',
-        position: 'Marketing Director at GreenLeaf',
-        img: 'assets/review1.png',
-        review:
-            'Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.',
-    },
-    {
-        id: 2,
-        name: 'Mark Rogers',
-        position: 'Founder of TechGear Shop',
-        img: 'assets/review2.png',
-        review:
-            'Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional! Fantastic work.',
-    },
-    {
-        id: 3,
-        name: 'John Dohsas',
-        position: 'Project Manager at UrbanTech ',
-        img: 'assets/review3.png',
-        review:
-            'I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.',
-    },
-    {
-        id: 4,
-        name: 'Ether Smith',
-        position: 'CEO of BrightStar Enterprises',
-        img: 'assets/review4.png',
-        review:
-            'Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend backend dev are top-notch.',
-    },
 ];
 
 export const myProjects = [
@@ -64,18 +32,18 @@ export const myProjects = [
             'Built with Python and MySQL, The backend utilizes Python and MySQL with a database comprising three tables: Users, Languages, and Language-Keys. A simple, efficient interface ensures easy access to personalized encryption tools.',
         href: 'https://github.com/bbhoom/codeleza-encryption-tool',
         texture: '/textures/project/project1.mp4',
-        logo: '/assets/project-logo1.png',
+        logo: '/Portfolio3D/assets/project-logo1.png',
         logoStyle: {
             backgroundColor: '#2A1816',
             border: '0.2px solid #36201D',
             boxShadow: '0px 0px 60px 0px #AA3C304D',
         },
-        spotlight: '/assets/spotlight1.png',
+        spotlight: '/Portfolio3D/assets/spotlight1.png',
         tags: [
             {
                 id: 1,
                 name: 'Python',
-                path: '/assets/Python-logo.webp',
+                path: '/Portfolio3D/assets/Python-logo.webp',
             },
             {
                 id: 2,
@@ -90,13 +58,13 @@ export const myProjects = [
         subdesc: "With BudgetApp, users can enjoy a seamless, responsive interface that combines React's dynamic capabilities with Bootstrap's sleek design, making financial planning straightforward and accessible.",
         href: 'https://github.com/bbhoom/BudgetApp',
         texture: '/textures/project/project2.mp4',
-        logo: '/assets/project-logo2.png',
+        logo: '/Portfolio3D/assets/project-logo2.png',
         logoStyle: {
             backgroundColor: '#13202F',
             border: '0.2px solid #17293E',
             boxShadow: '0px 0px 60px 0px #2F6DB54D',
         },
-        spotlight: '/assets/spotlight2.png',
+        spotlight: '/Portfolio3D/assets/spotlight2.png',
         tags: [
             {
                 id: 1,
@@ -117,7 +85,7 @@ export const myProjects = [
 
         href: 'https://github.com/bbhoom/Pac-man-Game',
         texture: '/textures/project/project3.mp4',
-        logo: '/assets/project-logo3.png',
+        logo: '/Portfolio3D/assets/project-logo3.png',
         logoStyle: {
             backgroundColor: '#60f5a1',
             background:
@@ -125,12 +93,12 @@ export const myProjects = [
             border: '0.2px solid rgba(208, 213, 221, 1)',
             boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
         },
-        spotlight: '/assets/spotlight3.png',
+        spotlight: '/Portfolio3D/assets/spotlight3.png',
         tags: [
             {
                 id: 1,
                 name: 'Python',
-                path: '/assets/Python-logo.webp',
+                path: '/Portfolio3D/assets/Python-logo.webp',
             },
             ,
         ],
@@ -142,23 +110,23 @@ export const myProjects = [
 
         href: 'https://github.com/bbhoom/Donkey-Kong',
         texture: '/textures/project/project4.mp4',
-        logo: '/assets/project-logo4.png',
+        logo: '/Portfolio3D/Portfolio3D/assets/project-logo4.png',
         logoStyle: {
             backgroundColor: '#0E1F38',
             border: '0.2px solid #0E2D58',
             boxShadow: '0px 0px 60px 0px #2F67B64D',
         },
-        spotlight: '/assets/spotlight4.png',
+        spotlight: '/Portfolio3D/assets/spotlight4.png',
         tags: [
             {
                 id: 1,
                 name: 'C#',
-                path: '/assets/c.png',
+                path: '/Portfolio3D/assets/c.png',
             },
             {
                 id: 2,
                 name: 'Unity',
-                path: 'assets/unity.png',
+                path: '/assets/unity.png',
             },
         ],
     },
@@ -168,7 +136,7 @@ export const myProjects = [
         subdesc: 'Built with a React frontend featuring react-gauge-chart for dynamic visual feedback, and a Django backend utilizing BeautifulSoup, Selenium, and Scikit-Learn for TF-IDF and cosine similarity calculations, PlagiarismPro leverages the Google Custom Search API to deliver precise and efficient plagiarism detection.',
         href: 'https://github.com/bbhoom/Plagarism-Detector',
         texture: '/textures/project/project6.mp4',
-        logo: '/assets/project-logo6.png',
+        logo: '/Portfolio3D/assets/project-logo6.png',
         logoStyle: {
             backgroundColor: '#60f5a1',
             background:
@@ -176,22 +144,22 @@ export const myProjects = [
             border: '0.2px solid rgba(208, 213, 221, 1)',
             boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
         },
-        spotlight: '/assets/spotlight3.png',
+        spotlight: '/Portfolio3D/assets/spotlight3.png',
         tags: [
             {
                 id: 1,
                 name: 'Python',
-                path: '/assets/Python-logo.webp',
+                path: '/Portfolio3D/assets/Python-logo.webp',
             },
             {
                 id: 2,
                 name: 'React.js',
-                path: '/assets/react.svg',
+                path: '/Portfolio3D/assets/react.svg',
             },
             {
                 id: 3,
                 name: 'Django',
-                path: '/assets/django.png',
+                path: '/Portfolio3D/assets/django.png',
             },
         ],
     },
@@ -201,23 +169,23 @@ export const myProjects = [
         subdesc: 'Developed with Python, Streamlit, and the GeminiAI API, Talk-Tuah Therapist delivers an accessible and user-friendly platform, bringing mental health support to your fingertips.',
         href: 'https://github.com/cupnoodles7/talk_tuah_therapist',
         texture: '/textures/project/project5.mp4',
-        logo: '/assets/project-logo5.png',
+        logo: '/Portfolio3D/assets/project-logo5.png',
         logoStyle: {
             backgroundColor: '#1C1A43',
             border: '0.2px solid #252262',
             boxShadow: '0px 0px 60px 0px #635BFF4D',
         },
-        spotlight: '/assets/spotlight5.png',
+        spotlight: '/Portfolio3D/assets/spotlight5.png',
         tags: [
             {
                 id: 1,
                 name: 'Python',
-                path: '/assets/Python-logo.webp',
+                path: '/Portfolio3D/assets/Python-logo.webp',
             },
             {
                 id: 2,
                 name: 'TailwindCSS',
-                path: 'assets/streamlit.png',
+                path: '/assets/streamlit.png',
             },
         ],
     },
@@ -233,33 +201,3 @@ export const calculateSizes = (isSmall, isMobile, isTablet) => {
         targetPosition: isSmall ? [-5, -10, -10] : isMobile ? [-9, -10, -10] : isTablet ? [-11, -7, -10] : [-13, -13, -10],
     };
 };
-
-export const workExperiences = [
-    {
-        id: 1,
-        name: 'Framer',
-        pos: 'Lead Web Developer',
-        duration: '2022 - Present',
-        title: "Framer serves as my go-to tool for creating interactive prototypes. I use it to bring designs to  life, allowing stakeholders to experience the user flow and interactions before development.",
-        icon: '/assets/framer.svg',
-        animation: 'victory',
-    },
-    {
-        id: 2,
-        name: 'Figma',
-        pos: 'Web Developer',
-        duration: '2020 - 2022',
-        title: "Figma is my collaborative design platform of choice. I utilize it to work seamlessly with team members and clients, facilitating real-time feedback and design iterations. Its cloud-based.",
-        icon: '/assets/figma.svg',
-        animation: 'clapping',
-    },
-    {
-        id: 3,
-        name: 'Notion',
-        pos: 'Junior Web Developer',
-        duration: '2019 - 2020',
-        title: "Notion helps me keep my projects organized. I use it for project management, task tracking, and as a central hub for documentation, ensuring that everything from design notes to.",
-        icon: '/assets/notion.svg',
-        animation: 'salute',
-    },
-];

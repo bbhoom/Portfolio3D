@@ -1,10 +1,10 @@
 import { useGLTF, useTexture } from '@react-three/drei';
 
 const HackerRoom = (props) => {
-  const { nodes, materials } = useGLTF('/models/hacker-room.glb');
+  const { nodes, materials } = useGLTF('https://bbhoom.github.io/Portfolio3D/models/hacker-room.glb');
 
-  const monitortxt = useTexture('textures/desk/monitor.png');
-  const screenTxt = useTexture('textures/desk/screen.png');
+  const monitortxt = useTexture('/Portfolio3D/textures/desk/monitor.png');
+  const screenTxt = useTexture('/Portfolio3D/textures/desk/screen.png');
 
   return (
     <group {...props} dispose={null}>
@@ -31,5 +31,5 @@ const HackerRoom = (props) => {
     </group>
   );
 }
-useGLTF.preload('/models/hacker-room.glb');
+useGLTF.preload('/Portfolio3D/models/hacker-room.glb')
 export default HackerRoom;

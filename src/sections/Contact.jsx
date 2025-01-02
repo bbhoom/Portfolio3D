@@ -68,7 +68,7 @@ const Contact = () => {
     return (
         <section className="relative min-h-screen" id="contact">
             <img
-                src="/assets/terminal.png"
+                src="/Portfolio3D/assets/terminal.png"
                 alt="terminal-bg"
                 className="absolute w-full h-100 object-cover"
             />

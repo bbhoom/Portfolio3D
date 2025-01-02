@@ -61,8 +61,8 @@ const About = () => {
                         </div>
                         <div>
                             <p className="grid-headtext">I’m very flexible with time zone communications & locations</p>
-                            <p className="grid-subtext">I'm based in Banglore, India and open to remote work worldwide.</p>
-                            <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
+                            <p className="grid-subtext">I'm based in Banglore, India and open to remote work worldwide.Find me on the globe.</p>
+                            <a href="#contact"><Button name="Contact Me" isBeam containerClass="w-full mt-10" /></a>
                         </div>
                     </div>
                 </div>
@@ -92,7 +92,7 @@ const About = () => {
                             <p className="grid-subtext text-center">Contact me</p>
                             <div className="copy-container" onClick={handleCopy}>
                                 <img src={hasCopied ? 'assets/tick.svg' : 'assets/copy.svg'} alt="copy" />
-                                <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">bhoomika432004@gmail.com</p>
+                                <p className="lg:text-2xl md:text-xl font-medium text-gray_gradient text-white">ksbhoomika43@gmail.com</p>
                             </div>
                         </div>
                     </div>
