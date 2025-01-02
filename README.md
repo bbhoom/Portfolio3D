@@ -49,8 +49,3 @@ Portfolio3D/
 
 ## 📜 License
 This project is licensed under the [MIT License](LICENSE).
-
----
-
-Feel free to customize this README further based on your project needs! 🚀
-```
