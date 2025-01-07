@@ -6,7 +6,6 @@ import Developer from '../components/Developer.jsx';
 import { Canvas } from "@react-three/fiber";
 import useAlert from '../hooks/useAlert.js';
 import './Contact.css';
-import ErrorBoundary from './ErrorBoundary.jsx';
 
 const Contact = () => {
 
