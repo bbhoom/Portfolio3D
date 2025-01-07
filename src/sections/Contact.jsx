@@ -1,14 +1,15 @@
-import { Suspense, useEffect, useRef, useState } from 'react';
+import { Suspense, useRef, useState } from 'react';
 import Alert from '../components/Alert.jsx';
 import { OrbitControls } from '@react-three/drei';
 import CanvasLoader from '../components/CanvasLoader.jsx';
-import Developer from '../components/Slider.jsx';
+import Developer from '../components/Developer.jsx';
 import { Canvas } from "@react-three/fiber";
-import IconCloudDemo from '../components/Slider.jsx';
 import useAlert from '../hooks/useAlert.js';
 import './Contact.css';
+import ErrorBoundary from './ErrorBoundary.jsx';
 
 const Contact = () => {
+
     const formRef = useRef();
     const { alert, showAlert, hideAlert } = useAlert();
     const [loading, setLoading] = useState(false);
@@ -66,23 +67,35 @@ const Contact = () => {
     };
 
     return (
-        <section className="relative min-h-screen" id="contact">
-            <img
-                src="/Portfolio3D/assets/terminal.png"
-                alt="terminal-bg"
-                className="absolute w-full h-100 object-cover"
-            />
+        <section className='c-space my-20' id='contact'>
+            <p className='head-text'>Let's talk</p>
 
-            <div className="relative z-10 max-w-xl mx-auto px-4 pt-8">
-                {alert.show && <Alert {...alert} />}
-                <h3 className="head-text text-center mb-6">Let's talk</h3>
+            <div className='grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full'>
+                {/* Left Column - Canvas */}
+                <div className='border border-black-300 bg-black-200 rounded-lg h-96 md:h-full'>
 
-                <div className="rounded-lg bg-black-200 mt-20 ">
-                    <p className="text-lg text-white-600 text-justify mb-6">
-                        Whether you're looking to build a new website, improve your existing platform, or bring a unique project to
-                        life, I'm here to help. Feel free to Contact me for any Quieries.
-                    </p>
-                    <form ref={formRef} className="form mx-auto" onSubmit={handleSubmit} style={{ maxWidth: '420px' }}>
+                    <Canvas>
+                        <ambientLight intensity={7} />
+                        <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
+                        <directionalLight position={[10, 10, 10]} intensity={1} />
+                        <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
+                        <Suspense fallback={<CanvasLoader />}>
+                            <Developer position-y={-3} scale={3} />
+                        </Suspense>
+                    </Canvas>
+
+                </div>
+
+                {/* Right Column - Contact Form */}
+                <div className='flex flex-col gap-5 relative sm:p-10 py-10 px-5'>
+                    {alert.show && <Alert {...alert} />}
+
+                    <form ref={formRef} className="form" onSubmit={handleSubmit}>
+                        <div className="title">
+                            Get in Touch
+                            <p><span>Whether you're looking to build a new website, improve your existing platform, or bring a unique project to life, I'm here to help.</span></p>
+                        </div>
+
                         <input
                             className="input"
                             name="name"
@@ -105,8 +118,9 @@ const Contact = () => {
                             placeholder="Message"
                             onChange={handleChange}
                             value={form.message}
-                            style={{ width: '100%', height: '100px' }}
+                            style={{ height: '100px' }}
                         />
+
                         <div className="login-with">
                             <ul className="example-2">
                                 <li className="icon-content">
@@ -129,10 +143,12 @@ const Contact = () => {
                                 </li>
                             </ul>
                         </div>
+
                         <button type="submit" className="button-confirm" disabled={loading}>
                             {loading ? 'Sending...' : 'Send Message →'}
                         </button>
                     </form>
+
                     <span id="loading-message" className="msg text-center block mt-4" style={{ display: 'none' }}>
                         Please wait, it's loading...
                     </span>
@@ -143,6 +159,7 @@ const Contact = () => {
             </div>
         </section>
     );
+
 };
 
 export default Contact;
