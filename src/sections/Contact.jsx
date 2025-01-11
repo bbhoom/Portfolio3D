@@ -8,7 +8,6 @@ import useAlert from '../hooks/useAlert.js';
 import './Contact.css';
 
 const Contact = () => {
-
     const formRef = useRef();
     const { alert, showAlert, hideAlert } = useAlert();
     const [loading, setLoading] = useState(false);
@@ -18,10 +17,28 @@ const Contact = () => {
         setForm({ ...form, [name]: value });
     };
 
+    const validateForm = () => {
+        if (!form.name || !form.email || !form.message) {
+            showAlert({
+                show: true,
+                text: 'Please fill in all fields',
+                type: 'danger',
+            });
+            setTimeout(() => {
+                hideAlert();
+            }, 3000);
+            return false;
+        }
+        return true;
+    };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
-        setLoading(true);
 
+        // Check if all fields are filled
+        if (!validateForm()) return;
+
+        setLoading(true);
         const scriptURL = 'https://script.google.com/macros/s/AKfycbxknH_qe6TvN82NPUjxFwXRJGu2bKE1kn_Ec2iJRZEWx8Yd3NIrmsJ0HYxW1DjntlgKeg/exec';
 
         try {
@@ -38,7 +55,7 @@ const Contact = () => {
                 type: 'success',
             });
             setTimeout(() => {
-                hideAlert(false);
+                hideAlert();
             }, 6000);
             setForm({
                 name: '',
@@ -48,7 +65,7 @@ const Contact = () => {
 
             setTimeout(() => {
                 document.getElementById('loading-message').style.display = 'none';
-                hideAlert(false);
+                hideAlert();
             }, 60000);
         } catch (error) {
             setLoading(false);
@@ -72,7 +89,6 @@ const Contact = () => {
             <div className='grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full'>
                 {/* Left Column - Canvas */}
                 <div className='border border-black-300 bg-black-200 rounded-lg h-96 md:h-full'>
-
                     <Canvas>
                         <ambientLight intensity={7} />
                         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
@@ -82,7 +98,6 @@ const Contact = () => {
                             <Developer position-y={-3} scale={3} />
                         </Suspense>
                     </Canvas>
-
                 </div>
 
                 {/* Right Column - Contact Form */}
@@ -158,7 +173,6 @@ const Contact = () => {
             </div>
         </section>
     );
-
 };
 
 export default Contact;

@@ -1,13 +1,13 @@
 import React, { Suspense } from 'react';
 import CanvasLoader from "../components/CanvasLoader";
 
-import { myProjects } from '../constants'
+import { myProjects } from '../constants';
 import { useState } from "react";
 import { Canvas } from '@react-three/fiber';
 import { Center, OrbitControls } from '@react-three/drei';
 import DemoComp from '../components/DemoComp';
-const projectCount = myProjects.length;
 
+const projectCount = myProjects.length;
 
 const Projects = () => {
     const [pindex, setpindex] = useState(0);
@@ -15,16 +15,17 @@ const Projects = () => {
 
     const handleNavigation = (direction) => {
         setpindex((prevIndex) => {
-            if (direction == 'previous') {
-                return prevIndex == 0 ? projectCount - 1 : prevIndex - 1;
+            if (direction === 'previous') {
+                return prevIndex === 0 ? projectCount - 1 : prevIndex - 1;
             } else {
-                return prevIndex == projectCount - 1 ? 0 : prevIndex + 1;
+                return prevIndex === projectCount - 1 ? 0 : prevIndex + 1;
             }
-        })
-    }
+        });
+    };
+
     return (
         <section className='c-space my-20' id='work'>
-            <p className='head-text'>My Work</p>
+            <p className='head-text'>My Projects</p>
             <div className='grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full'>
                 <div className='flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200'>
                     <div className='absolute top-0 right-0'>
@@ -51,10 +52,14 @@ const Projects = () => {
                             <img src="assets/arrow-up.png" alt="uparrow" className='w-3 h-3' />
                         </a>
                     </div>
-                    <div className='flex-justify-between items-center mt-7'>
+                    <div className='flex justify-between items-center mt-7'>
                         <button className='arrow-btn' onClick={() => handleNavigation('previous')}>
                             <img src="assets/left-arrow.png" alt="left" className='w-4 h-4' />
                         </button>
+                        {/* Counter Display */}
+                        <div className='text-center text-white text-sm'>
+                            {`Project ${pindex + 1} of ${projectCount}`}
+                        </div>
                         <button className='arrow-btn' onClick={() => handleNavigation('next')}>
                             <img src="assets/right-arrow.png" alt="right" className='w-4 h-4' />
                         </button>
@@ -76,7 +81,7 @@ const Projects = () => {
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default Projects
+export default Projects;
