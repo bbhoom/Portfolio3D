@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Globe from 'react-globe.gl';
 import { OrbitControls, useGLTF } from '@react-three/drei';
 import Button from '../components/Button.jsx';
+import EarthCanvas from '../components/Earth.jsx';
 
 const About = () => {
     const [hasCopied, setHasCopied] = useState(false);
@@ -47,7 +48,8 @@ const About = () => {
                 <div className="col-span-1 xl:row-span-4">
                     <div className="grid-container">
                         <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center">
-                            <Globe
+                            <EarthCanvas></EarthCanvas>
+                            {/* <Globe
                                 height={326}
                                 width={326}
                                 backgroundColor="rgba(0, 0, 0, 0)"
@@ -57,11 +59,11 @@ const About = () => {
                                 globeImageUrl="//unpkg.com/three-globe/example/img/earth-night.jpg"
                                 bumpImageUrl="//unpkg.com/three-globe/example/img/earth-topology.png"
                                 labelsData={[{ lat: 12.9, lng: 77.5, text: "I'm Here", color: 'white', size: 45 }]}
-                            />
+                            /> */}
                         </div>
                         <div>
                             <p className="grid-headtext">I’m very flexible with time zone communications & locations</p>
-                            <p className="grid-subtext">I'm based in Banglore, India and open to remote work worldwide.Find me on the globe.</p>
+                            <p className="grid-subtext">I'm based in Banglore, India and open to remote work worldwide.</p>
                             <a href="#contact"><Button name="Contact Me" isBeam containerClass="w-full mt-10" /></a>
                         </div>
                     </div>
