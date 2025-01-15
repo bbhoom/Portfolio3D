@@ -88,12 +88,17 @@ const Contact = () => {
 
             <div className='grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full'>
                 {/* Left Column - Canvas */}
-                <div className='border border-black-300 bg-black-200 rounded-lg h-96 md:h-full'>
-                    <Canvas>
+                <div className='border border-black-300 bg-black-200 rounded-lg h-96 md:h-full' style={{
+                    // backgroundColor: '#7e7e7e',
+                    backgroundImage: 'url("public/assets/bg2.jpg")',
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                }}>
+                    <Canvas >
                         <ambientLight intensity={7} />
                         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />
                         <directionalLight position={[10, 10, 10]} intensity={1} />
-                        <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} />
+                        <OrbitControls enableZoom={false} maxPolarAngle={Math.PI / 2} minPolarAngle={Math.PI / 2} />
                         <Suspense fallback={<CanvasLoader />}>
                             <Developer position-y={-3} scale={3} />
                         </Suspense>
