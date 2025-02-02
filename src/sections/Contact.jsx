@@ -90,10 +90,11 @@ const Contact = () => {
                 {/* Left Column - Canvas */}
                 <div className='border border-black-300 bg-black-200 rounded-lg h-96 md:h-full' style={{
                     // backgroundColor: '#7e7e7e',
-                    backgroundImage: 'url("public/assets/bg2.jpg")',
+                    backgroundImage: 'url("assets/bg2.jpg")',
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                 }}>
+
                     <Canvas >
                         <ambientLight intensity={7} />
                         <spotLight position={[10, 10, 10]} angle={0.15} penumbra={1} />

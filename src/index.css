@@ -91,6 +91,10 @@ body {
     @apply w-full h-full border border-black-300 bg-black-200 rounded-lg sm:p-7 p-4 flex flex-col gap-5;
   }
 
+  .grid-container {
+    @apply w-full h-full border border-black-300 bg-transparent rounded-lg sm:p-7 p-4 flex flex-col gap-5 relative;
+  }
+
   .grid-headtext {
     @apply text-xl font-semibold mb-2 text-white font-generalsans;
   }
@@ -99,9 +103,33 @@ body {
     @apply text-[#afb0b6] text-base font-generalsans;
   }
 
-  .copy-container {
-    @apply cursor-pointer flex justify-center items-center gap-2;
+  /* .grid-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 1.5rem;
+    background: transparent;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 20;
   }
+
+  .grid-headtext {
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 1.25;
+    color: white;
+    margin-bottom: 0.5rem;
+  }
+
+  .grid-subtext {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #afb0b6;
+  } */
 
   /* projects section  */
   .arrow-btn {
@@ -112,43 +140,7 @@ body {
     @apply w-10 h-10 rounded-md p-2 bg-neutral-100 bg-opacity-10 backdrop-filter backdrop-blur-lg flex justify-center items-center;
   }
 
-  /* clients section */
-  .client-container {
-    @apply grid md:grid-cols-2 grid-cols-1 gap-5 mt-12;
-  }
 
-  .client-review {
-    @apply rounded-lg md:p-10 p-5 col-span-1 bg-black-300 bg-opacity-50;
-  }
-
-  .client-content {
-    @apply flex lg:flex-row flex-col justify-between lg:items-center items-start gap-5 mt-7;
-  }
-
-  /*  work experience section */
-  .work-container {
-    @apply grid lg:grid-cols-3 grid-cols-1 gap-5 mt-12;
-  }
-
-  .work-canvas {
-    @apply col-span-1 rounded-lg bg-black-200 border border-black-300;
-  }
-
-  .work-content {
-    @apply col-span-2 rounded-lg bg-black-200 border border-black-300;
-  }
-
-  .work-content_container {
-    @apply grid grid-cols-[auto_1fr] items-start gap-5 transition-all ease-in-out duration-500 cursor-pointer hover:bg-black-300 rounded-lg sm:px-5 px-2.5;
-  }
-
-  .work-content_logo {
-    @apply rounded-3xl w-16 h-16 p-2 bg-black-600;
-  }
-
-  .work-content_bar {
-    @apply flex-1 w-0.5 mt-4 h-full bg-black-300 group-hover:bg-black-500 group-last:hidden;
-  }
 
   /* contact section */
   .contact-container {
@@ -177,13 +169,7 @@ body {
   }
 }
 
-.waving-hand {
-  animation-name: wave-animation;
-  animation-duration: 2.5s;
-  animation-iteration-count: infinite;
-  transform-origin: 70% 70%;
-  display: inline-block;
-}
+
 
 .arrow-gradient {
   background-image: linear-gradient(to right,

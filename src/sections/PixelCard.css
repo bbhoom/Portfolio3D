@@ -1,0 +1,49 @@
+.pixel-card {
+    height: 100% !important;
+    width: 100% !important;
+    border-radius: 1rem;
+    aspect-ratio: auto !important;
+    position: relative;
+}
+
+.pixel-canvas {
+    border-radius: 1rem;
+    z-index: 10;
+}
+
+/* Ensure content stays above canvas */
+.pixel-card>div:first-child {
+    position: relative;
+    z-index: 20;
+}
+
+/* .pixel-card {
+    height: 100% !important;
+    width: 100% !important;
+    border-radius: 1rem;
+    aspect-ratio: auto !important;
+    position: absolute !important;
+    inset: 0 !important;
+}
+
+.pixel-canvas {
+    border-radius: 1rem;
+    position: absolute !important;
+    inset: 0 !important;
+} */
+
+.pixel-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    aspect-ratio: 1;
+    background: radial-gradient(circle, #09090b, transparent 85%);
+    opacity: 0;
+    transition: opacity 400ms cubic-bezier(0.5, 1, 0.89, 1);
+}
+
+.pixel-card:hover::before,
+.pixel-card:focus-within::before {
+    opacity: 1;
+}
