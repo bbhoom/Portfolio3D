@@ -124,7 +124,7 @@ const VARIANTS = {
     pink: {
         activeColor: "#fecdd3",
         gap: 6,
-        speed: 80,
+        speed: 25,
         colors: "#fecdd3,#fda4af,#e11d48",
         noFocus: true
     }
