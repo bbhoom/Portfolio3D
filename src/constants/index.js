@@ -16,6 +16,11 @@ export const navLinks = [
     },
     {
         id: 4,
+        name: 'Achievements',
+        href: '#achievements',
+    },
+    {
+        id: 5,
         name: 'Contact',
         href: '#contact',
     },
@@ -190,14 +195,70 @@ export const myProjects = [
         ],
     },
 ];
-
+export const achievementscode = [
+    {
+        title: "Hackathon Winner",
+        value: "1st Place",
+        description: "Won 1st place in a 24-hour hackathon for AI Therapist project",
+        icon: "🏅",
+        details: {
+            event: "24-hour National Hackathon",
+            project: "AI Therapist",
+            techStack: ["Python", "Streamlit", "Gemenai API"],
+            impact: "Designed a mental health assistant capable of early detection of depression & anxiety using speech and text inputs, and other relaxation activities like breathing center or journaling center and many others.",
+            recognition: "Selected as the top project among 120+ teams after 24 hours of continous dedication and team efforts",
+            date: "November 2024"
+        }
+    }
+    ,
+    {
+        title: "Patent Contributor",
+        value: "Ambulance App",
+        description: "Filed patent for On-Booking Ambulance Service concept",
+        icon: "🚑",
+        details: {
+            applicationNumber: "202441091901",
+            project: "On-Booking Ambulance Service",
+            concept: "The idea facilitates location-driven ambulance requests, optimizing dispatch through AI. By reducing communication bottlenecks, it aims to drastically decrease mortality rates associated with delayed emergency medical services.",
+            contribution: "Contributed the core idea and helped address critical gaps in emergency healthcare logistics",
+            status: "Patent filed and under review since Dec 2024"
+        }
+    },
+    {
+        title: "Patent Contributor",
+        value: "Smart Mirror",
+        description: "Filed patent for AI-powered Skincare Smart Mirror",
+        icon: "🪞",
+        details: {
+            applicationNumber: "202441088578",
+            project: "Skin-care Smart Mirror",
+            concept: "A smart mirror using AI and computer vision for real-time skincare analysis.This provides insights on how to keep your skin healthy and best practices on it,also provides routine reminders.",
+            contribution: "Recognized as an inventor, helped improve Skincare Snalysis with reduced costs.",
+            affiliation: "Filed by Dayananda Sagar College of Engineering",
+            status: "Patent filed and under review since Nov 2024"
+        }
+    },
+    {
+        title: "Research Presenter",
+        value: "ICCMDSAI 2025",
+        description: "Presented research on AI-driven Braille translation at an international conference",
+        icon: "📄",
+        details: {
+            event: "International Conference on Computational Mathematics in the Era of Data Science & AI (ICCMDSAI - 2025)",
+            project: "Context-Aware Text-to-Braille Conversion",
+            impact: "Improved contextual accuracy in Braille translation to enhance accessibility for visually impaired readers",
+            recognition: "Presented in front of researchers and experts, with valuable feedback and discussions",
+            date: "February 21-22, 2025"
+        }
+    }
+];
 export const calculateSizes = (isSmall, isMobile, isTablet) => {
     return {
         deskScale: isSmall ? 0.05 : isMobile ? 0.06 : 0.065,
         deskPosition: isMobile ? [0.5, -4.5, 0] : [0.25, -5.5, 0],
-        cubePosition: isSmall ? [5, -5, 0] : isMobile ? [5, -8, 0] : isTablet ? [5, -5, 0] : [9, -5.5, 0],
-        reactLogoPosition: isSmall ? [3, 4, 0] : isMobile ? [5, 4, 0] : isTablet ? [5, 4, 0] : [12, 3, 0],
-        ringPosition: isSmall ? [-5, 7, 0] : isMobile ? [-10, 8, 0] : isTablet ? [-12, 10, 0] : [-24, 10, 0],
-        targetPosition: isSmall ? [-5, -10, -10] : isMobile ? [-9, -10, -10] : isTablet ? [-11, -7, -10] : [-13, -13, -10],
+        cubePosition: isSmall ? [0, 0, 0] : isMobile ? [0, 0, 0] : isTablet ? [5, -5, 0] : [7, -2.3, 0],
+        reactLogoPosition: isSmall ? [3, 4, 0] : isMobile ? [5, 4, 0] : isTablet ? [5, 4, 0] : [6, 2, 0],
+        ringPosition: isSmall ? [-5, 7, 0] : isMobile ? [-10, 8, 0] : isTablet ? [-12, 10, 0] : [-29, 9, 0],
+        targetPosition: isSmall ? [10, -10, -10] : isMobile ? [-9, -10, -10] : isTablet ? [-11, -7, -10] : [-17, -7, -10],
     };
 };

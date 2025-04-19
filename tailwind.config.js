@@ -1,6 +1,8 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+const config = {
+  darkMode: 'class', // Enables dark mode via the 'dark' class
   content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+
   theme: {
     extend: {
       fontFamily: {
@@ -8,7 +10,7 @@ export default {
       },
       colors: {
         black: {
-          DEFAULT: '#000',
+          DEFAULT: '#000000',
           100: '#010103',
           200: '#0E0E10',
           300: '#1C1C21',
@@ -17,16 +19,21 @@ export default {
         },
         white: {
           DEFAULT: '#FFFFFF',
-          800: '#E4E4E6',
-          700: '#D6D9E9',
-          600: '#AFB0B6',
           500: '#62646C',
+          600: '#AFB0B6',
+          700: '#D6D9E9',
+          800: '#E4E4E6',
         },
       },
       backgroundImage: {
         terminal: "url('/assets/terminal.png')",
+
       },
     },
   },
+
   plugins: [],
 };
+
+
+export default config;

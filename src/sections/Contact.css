@@ -1,5 +1,5 @@
 /* From Uiverse.io by andrew-demchenk0 */
-.form {
+.contact-form-wrapper.dark-mode .form {
 	--input-focus: #2d8cf0;
 	--font-color: #fefefe;
 	--font-color-sub: #7e7e7e;
@@ -17,20 +17,39 @@
 	box-shadow: 4px 4px var(--main-color);
 }
 
-.title {
+/* Light theme styles */
+.contact-form-wrapper.light-mode .form {
+	--input-focus: #0064c8;
+	--font-color: #333333;
+	--font-color-sub: #666666;
+	--bg-color: transparent;
+	--main-color: #333333;
+	padding: 20px;
+	background: var(--bg-color);
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	justify-content: center;
+	gap: 20px;
+	border-radius: 5px;
+	border: 2px solid var(--main-color);
+	box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
+}
+
+.form .title {
 	color: var(--font-color);
 	font-weight: 900;
 	font-size: 20px;
 	margin-bottom: 25px;
 }
 
-.title span {
+.form .title span {
 	color: var(--font-color-sub);
 	font-weight: 600;
 	font-size: 17px;
 }
 
-.input {
+.form .input {
 	width: 250px;
 	height: 40px;
 	border-radius: 5px;
@@ -44,21 +63,25 @@
 	outline: none;
 }
 
-.input::placeholder {
+.contact-form-wrapper.light-mode .form .input {
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+.form .input::placeholder {
 	color: var(--font-color-sub);
 	opacity: 0.8;
 }
 
-.input:focus {
+.form .input:focus {
 	border: 2px solid var(--input-focus);
 }
 
-.login-with {
+.form .login-with {
 	display: flex;
 	gap: 20px;
 }
 
-.button-log {
+.form .button-log {
 	cursor: pointer;
 	width: 40px;
 	height: 40px;
@@ -73,19 +96,19 @@
 	align-items: center;
 }
 
-.icon {
+.form .icon {
 	width: 24px;
 	height: 24px;
 	fill: var(--main-color);
 }
 
-.button-log:active,
-.button-confirm:active {
+.form .button-log:active,
+.form .button-confirm:active {
 	box-shadow: 0px 0px var(--main-color);
 	transform: translate(3px, 3px);
 }
 
-.button-confirm {
+.form .button-confirm {
 	width: 100%;
 	max-width: 200px;
 	height: 40px;
@@ -101,7 +124,11 @@
 	display: block;
 }
 
-/* Tooltipls ul */
+.contact-form-wrapper.light-mode .form .button-confirm {
+	background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* Tooltips ul */
 /* From Uiverse.io by wilsondesouza */
 ul {
 	list-style: none;
@@ -196,7 +223,10 @@ p {
 	margin: 0;
 	padding: 0;
 	border: none;
-	/* Ensure no unintended borders */
 	box-shadow: none;
-	/* Remove unnecessary shadows */
+}
+
+.example-2 .icon-content a[data-social="resume"] .filled,
+.example-2 .icon-content a[data-social="resume"]~.tooltip {
+	background-color: #0064c8;
 }

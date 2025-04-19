@@ -45,7 +45,7 @@ const Rings = ({ position }) => {
 
     return (
         <Center>
-            <group scale={0.5}>
+            <group scale={0.2}>
                 {Array.from({ length: 4 }, (_, index) => (
                     <mesh key={index} ref={getRef}>
                         <torusGeometry args={[(index + 1) * 0.5, 0.1]}></torusGeometry>

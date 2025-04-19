@@ -1,8 +1,27 @@
-import React from 'react'
+
+import { useState, useEffect } from 'react';
 
 const Footer = () => {
+    const [isDarkTheme, setIsDarkTheme] = useState(true);
+
+    // Check theme on component mount and when it changes
+    useEffect(() => {
+        const checkTheme = () => {
+            const isDark = document.documentElement.classList.contains('dark');
+            setIsDarkTheme(isDark);
+        };
+
+        // Check initial theme
+        checkTheme();
+
+        // Set up an observer to detect theme changes
+        const observer = new MutationObserver(checkTheme);
+        observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+
+        return () => observer.disconnect();
+    }, []);
     return (
-        <section className='c-space pt-7 pb-3 border-t border-cream-500 flex justify-between items-center flex-wrap gap-2'>
+        <section className={`c-space pt-7 pb-3 border-t flex justify-between items-center flex-wrap gap-2 ${!isDarkTheme ? "border-black-500" : "border-cream-500"}`}>
             <div className='text-white-600 flex gap-2'>
                 <p>Developed By</p>
 

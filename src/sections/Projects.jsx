@@ -26,7 +26,7 @@ const Projects = () => {
     return (
         <section className='c-space my-20' id='work'>
             <p className='head-text'>My Projects</p>
-            <div className='grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full'>
+            <div className='grid lg:grid-cols-2 grid-cols-1 mt-14 gap-5 w-full'>
                 <div className='flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200'>
                     <div className='absolute top-0 right-0'>
                         <img src={currentProject.spotlight} alt="spotlight" className='w-full h-96 object-cover rounded-xl' />
@@ -34,8 +34,8 @@ const Projects = () => {
                     <div className='p-3 backdrop-filter backdrop-blur-3xl w-fit rounded-lg' style={myProjects[0].logoStyle}>
                         <img src={currentProject.logo} alt="logo" className='w-10 h-10 shadow-sm' />
                     </div>
-                    <div className='flex flex-col gap-5 text-white-600 my-5'>
-                        <p className='text-white text-2xl font-semibold animatedText'>{currentProject.title}</p>
+                    <div className='flex flex-col gap-5 text-gray-800 dark:text-white my-5'>
+                        <p className='text-black-300 dark:text-white text-2xl font-semibold animatedText'>{currentProject.title}</p>
                         <p className='animatedText'>{currentProject.desc}</p>
                         <p className='animatedText'>{currentProject.subdesc}</p>
                     </div>
@@ -47,7 +47,7 @@ const Projects = () => {
                                 </div>
                             ))}
                         </div>
-                        <a className='flex items-center gap-2 cursor-pointer text-white-600' href={currentProject.href} target='_blank' rel='noreffer'>
+                        <a className='flex items-center gap-2 cursor-pointer text-white-100 dark:text-white-600' href={currentProject.href} target='_blank' rel='noreffer'>
                             <p>Check Live Site</p>
                             <img src="assets/arrow-up.png" alt="uparrow" className='w-3 h-3' />
                         </a>
@@ -57,7 +57,7 @@ const Projects = () => {
                             <img src="assets/left-arrow.png" alt="left" className='w-4 h-4' />
                         </button>
                         {/* Counter Display */}
-                        <div className='text-center text-white text-sm'>
+                        <div className='text-center text-black-300 dark:text-white text-sm'>
                             {`Project ${pindex + 1} of ${projectCount}`}
                         </div>
                         <button className='arrow-btn' onClick={() => handleNavigation('next')}>

@@ -17,6 +17,10 @@
     "@gsap/react": "^2.1.1",
     "@react-three/drei": "^9.117.3",
     "@react-three/fiber": "^8.17.10",
+    "@splinetool/loader": "^1.9.82",
+    "@splinetool/react-spline": "^4.0.0",
+    "@splinetool/runtime": "^1.9.82",
+    "framer-motion": "^12.6.2",
     "gsap": "^3.12.5",
     "leva": "^0.9.35",
     "lucide-react": "^0.468.0",
@@ -27,8 +31,10 @@
     "react-dom": "^18.3.1",
     "react-globe.gl": "^2.27.6",
     "react-icon-cloud": "^4.1.6",
+    "react-intersection-observer": "^9.16.0",
     "react-responsive": "^10.0.0",
-    "three": "^0.170.0"
+    "react-swipeable": "^7.0.2",
+    "three": "^0.146.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.13.0",
