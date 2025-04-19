@@ -2,28 +2,12 @@ import { useState, useEffect } from "react";
 import { navLinks } from "../constants/index.js";
 import "./Togggle.css";
 
-const NavItems = ({ darkTheme }) => {
-    return (
-        <ul className="nav-ul">
-            {navLinks.map(({ id, href, name }) => (
-                <li key={id} className="nav-li">
-                    <a
-                        href={href}
-                        className={`nav-li-a relative ${darkTheme ? 'text-[#FAFAFA]' : 'text-black'} ${darkTheme ? 'hover:text-[#A8E6CF]' : 'hover:text-[#f79d65]'} transition-all duration-300 ease-in-out 
-                            after:content-[''] after:absolute after:w-0 after:h-0.5 ${darkTheme ? 'after:bg-[#A8E6CF]' : 'after:bg-[#f79d65]'} after:left-0 after:-bottom-1 
-                            after:transition-all after:duration-300 hover:after:w-full`}
-                    >
-                        {name}
-                    </a>
-                </li>
-            ))}
-        </ul>
-    );
-};
-
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
+
     const toggleMenu = () => setIsOpen((prevIsOpen) => !prevIsOpen);
+
+    const closeMenu = () => setIsOpen(false);
 
     // Default to dark mode unless user changed it before
     const [darkTheme, setDarkTheme] = useState(() => {
@@ -60,6 +44,29 @@ const Navbar = () => {
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
+    // Close mobile menu when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (isOpen && !event.target.closest('.navbar-container') &&
+                !event.target.closest('.mobile-menu')) {
+                closeMenu();
+            }
+        };
+
+        if (isOpen) {
+            document.addEventListener('click', handleClickOutside);
+            // Prevent scrolling when menu is open
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+
+        return () => {
+            document.removeEventListener('click', handleClickOutside);
+            document.body.style.overflow = '';
+        };
+    }, [isOpen]);
+
     // Shadow classes based on theme and scroll
     const shadowClass = darkTheme
         ? 'shadow-[0_2px_10px_rgba(0,0,0,0.1)]'
@@ -67,14 +74,17 @@ const Navbar = () => {
 
     return (
         <header
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${darkTheme ? 'bg-black text-[#FAFAFA]' : 'bg-[#faedcd] text-[#333333]'}
+            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 
+                ${darkTheme ? 'bg-black text-[#FAFAFA]' : 'bg-[#faedcd] text-[#333333]'}
                 ${isScrolled ? 'shadow-lg py-2' : `${shadowClass} py-4`}`}
         >
-            <div className="max-w-7xl mx-auto">
-                <div className="flex justify-between items-center mx-auto c-space">
+            <div className="max-w-7xl mx-auto navbar-container">
+                <div className="flex justify-between items-center mx-auto c-space px-4">
                     <a
                         href="#home"
-                        className={`font-bold text-xl ${darkTheme ? 'hover:text-[#A8E6CF]' : 'hover:text-[#f79d65]'} transition-colors duration-300 transform hover:scale-105`}
+                        className={`font-bold text-xl ${darkTheme ? 'hover:text-[#A8E6CF]' : 'hover:text-[#f79d65]'} 
+                            transition-colors duration-300 transform hover:scale-105`}
+                        onClick={closeMenu}
                     >
                         Bhoomika K S
                     </a>
@@ -117,29 +127,73 @@ const Navbar = () => {
                     {/* Menu Toggle Button (Mobile) */}
                     <button
                         onClick={toggleMenu}
-                        className={`hover:text-[${darkTheme ? '#FF8A80' : '#f79d65'}] focus:outline-none sm:hidden flex transition-transform duration-200 hover:rotate-180`}
+                        className="focus:outline-none sm:hidden flex z-50 transition-transform duration-200"
                         aria-label="Toggle menu"
+                        aria-expanded={isOpen}
                     >
-                        <img src={isOpen ? "assets/close.svg" : "assets/menu.svg"} alt="toggle" className="w-6 h-6" />
+                        <img
+                            src={isOpen ? "assets/close.svg" : "assets/menu.svg"}
+                            alt={isOpen ? "Close menu" : "Open menu"}
+                            className="w-6 h-6"
+                        />
                     </button>
 
                     {/* Desktop Navigation */}
                     <nav className="sm:flex hidden">
-                        <NavItems darkTheme={darkTheme} />
+                        <ul className="nav-ul flex space-x-6">
+                            {navLinks.map(({ id, href, name }) => (
+                                <li key={id} className="nav-li">
+                                    <a
+                                        href={href}
+                                        className={`nav-li-a relative ${darkTheme ? 'text-[#FAFAFA]' : 'text-black'} 
+                                            ${darkTheme ? 'hover:text-[#A8E6CF]' : 'hover:text-[#f79d65]'} 
+                                            transition-all duration-300 ease-in-out 
+                                            after:content-[''] after:absolute after:w-0 after:h-0.5 
+                                            ${darkTheme ? 'after:bg-[#A8E6CF]' : 'after:bg-[#f79d65]'} 
+                                            after:left-0 after:-bottom-1 
+                                            after:transition-all after:duration-300 hover:after:w-full`}
+                                    >
+                                        {name}
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
                     </nav>
                 </div>
             </div>
 
-            {/* Mobile Sidebar */}
-            <div
-                className={`nav-sidebar transition-all duration-300 ease-in-out ${isOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
-                    } ${darkTheme ? 'bg-black/90 backdrop-blur-sm' : 'bg-[#faedcd]/90 backdrop-blur-sm'
-                    }`}
-            >
-                <nav className="p-5">
-                    <NavItems darkTheme={darkTheme} />
-                </nav>
-            </div>
+            {/* Mobile Sidebar - Simplified */}
+            {isOpen && (
+                <div className="fixed inset-0 z-40 sm:hidden mobile-menu">
+                    {/* Overlay */}
+                    <div
+                        className="absolute inset-0 bg-black/60"
+                        onClick={closeMenu}
+                    ></div>
+
+                    {/* Sidebar content */}
+                    <div
+                        className={`absolute top-0 right-0 h-screen w-64 p-6 pt-20 shadow-lg
+                            ${darkTheme ? 'bg-black text-white' : 'bg-[#faedcd] text-black'}`}
+                    >
+                        <nav>
+                            <ul className="flex flex-col space-y-6">
+                                {navLinks.map(({ id, href, name }) => (
+                                    <li key={id}>
+                                        <a
+                                            href={href}
+                                            onClick={closeMenu}
+                                            className={`text-lg block py-2 ${darkTheme ? 'text-white hover:text-[#A8E6CF]' : 'text-black hover:text-[#f79d65]'}`}
+                                        >
+                                            {name}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            )}
         </header>
     );
 };

@@ -194,6 +194,32 @@ export const myProjects = [
             },
         ],
     },
+    {
+        title: 'AI Resume Builder - Your Smart CV Friend',
+        desc: 'AI Resume Builder is an intelligent application designed to streamline resume creation with personalized content suggestions. It asks you questions to understand career goals and generate professional resume content tailored to specific job applications.',
+        subdesc: 'Developed with Python, Streamlit, and the Cohere API, AI Resume Builder delivers an accessible and user-friendly platform, bringing professional resume assistance to your fingertips.',
+        href: 'https://github.com/bbhoom/AI-Resume-Friend',
+        texture: '/Portfolio3D/textures/project/project7.mp4',
+        logo: '/Portfolio3D/assets/project-logo7.png',
+        logoStyle: {
+            backgroundColor: '#1C1A43',
+            border: '0.2px solid #252262',
+            boxShadow: '0px 0px 60px 0px #635BFF4D',
+        },
+        spotlight: '/Portfolio3D/assets/spotlight5.png',
+        tags: [
+            {
+                id: 1,
+                name: 'Python',
+                path: '/Portfolio3D/assets/Python-logo.webp',
+            },
+            {
+                id: 2,
+                name: 'TailwindCSS',
+                path: '/Portfolio3D/assets/streamlit.png',
+            },
+        ],
+    },
 ];
 export const achievementscode = [
     {
