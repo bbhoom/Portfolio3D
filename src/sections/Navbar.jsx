@@ -85,11 +85,11 @@ const Navbar = () => {
                 ${isScrolled ? 'shadow-lg py-2 sm:py-2' : `${shadowClass} py-3 sm:py-4`}`}
         >
             <div className="max-w-7xl mx-auto navbar-container">
-                <div className="flex justify-between items-center mx-auto px-1 xs:px-2 sm:px-4 lg:px-6">
+                <div className="flex justify-between items-center mx-auto px-2 xs:px-3 sm:px-4 lg:px-6">
                     {/* Logo/Brand */}
                     <a
                         href="#home"
-                        className={`font-bold text-sm sm:text-base lg:text-xl z-50
+                        className={`font-bold text-base sm:text-3xl lg:text-xl z-50
                             ${darkTheme ? 'hover:text-[#A8E6CF]' : 'hover:text-[#f79d65]'} 
                             transition-colors duration-300 transform hover:scale-105
                             flex-shrink-0 max-w-[40%] truncate`}
@@ -105,7 +105,7 @@ const Navbar = () => {
                                 <li key={id} className="nav-li">
                                     <a
                                         href={href}
-                                        className={`nav-li-a relative text-sm xl:text-base
+                                        className={`nav-li-a relative text-base xl:text-base
                                             ${darkTheme ? 'text-[#FAFAFA]' : 'text-black'} 
                                             ${darkTheme ? 'hover:text-[#A8E6CF]' : 'hover:text-[#f79d65]'} 
                                             transition-all duration-300 ease-in-out 
@@ -125,7 +125,7 @@ const Navbar = () => {
                     {/* Right side controls */}
                     <div className="flex items-center space-x-3 xs:space-x-11 sm:space-x-10 lg:space-x-4 flex-shrink-0">
                         {/* Dark Mode Toggle */}
-                        <label className="mr-4 switch transform hover:scale-105 transition-transform duration-200 flex-shrink-0 scale-[0.65] xs:scale-75 sm:scale-90 lg:scale-100">
+                        <label className="mr-4 switch transform hover:scale-105 transition-transform duration-200 flex-shrink-0 scale-100 xs:scale-100 sm:scale-90 lg:scale-100">
                             <input
                                 id="input"
                                 type="checkbox"
@@ -165,31 +165,31 @@ const Navbar = () => {
                             </div>
                         </label>
 
-                        {/* Menu Toggle Button (Mobile/Tablet only) */}
+                        {/* Menu Toggle Button (Mobile/Tablet only) - Fixed sizing */}
                         <button
                             onClick={toggleMenu}
                             className="focus:outline-none lg:hidden flex z-50 transition-all duration-200
-                                p-1 xs:p-1.5 sm:p-2 rounded-md hover:bg-opacity-10 hover:bg-gray-500
-                                active:scale-95 flex-shrink-0 min-w-[32px] xs:min-w-[36px] sm:min-w-[40px] justify-center items-center"
+                                p-2 rounded-md hover:bg-opacity-10 hover:bg-gray-500
+                                active:scale-95 flex-shrink-0"
                             aria-label="Toggle menu"
                             aria-expanded={isOpen}
                         >
-                            <div className="relative w-4 h-4 xs:w-5 xs:h-5 sm:w-6 sm:h-6">
-                                {/* Animated hamburger/close icon */}
+                            <div className="relative w-6 h-6 flex flex-col justify-center">
+                                {/* Animated hamburger/close icon - Better proportioned */}
                                 <span
-                                    className={`absolute left-0 top-0.5 xs:top-0.5 sm:top-1 w-4 xs:w-5 sm:w-6 h-0.5 transform transition-all duration-300 ease-in-out
+                                    className={`absolute w-6 h-0.5 transform transition-all duration-300 ease-in-out
                                         ${darkTheme ? 'bg-white' : 'bg-black'}
-                                        ${isOpen ? 'rotate-45 translate-y-1 xs:translate-y-1.5 sm:translate-y-2' : 'rotate-0'}`}
+                                        ${isOpen ? 'rotate-45 translate-y-0' : '-translate-y-1.5'}`}
                                 />
                                 <span
-                                    className={`absolute left-0 top-1.5 xs:top-2 sm:top-2.5 w-4 xs:w-5 sm:w-6 h-0.5 transform transition-all duration-300 ease-in-out
+                                    className={`absolute w-6 h-0.5 transform transition-all duration-300 ease-in-out
                                         ${darkTheme ? 'bg-white' : 'bg-black'}
                                         ${isOpen ? 'opacity-0' : 'opacity-100'}`}
                                 />
                                 <span
-                                    className={`absolute left-0 top-2.5 xs:top-3.5 sm:top-4 w-4 xs:w-5 sm:w-6 h-0.5 transform transition-all duration-300 ease-in-out
+                                    className={`absolute w-6 h-0.5 transform transition-all duration-300 ease-in-out
                                         ${darkTheme ? 'bg-white' : 'bg-black'}
-                                        ${isOpen ? '-rotate-45 -translate-y-1 xs:-translate-y-1.5 sm:-translate-y-2' : 'rotate-0'}`}
+                                        ${isOpen ? '-rotate-45 translate-y-0' : 'translate-y-1.5'}`}
                                 />
                             </div>
                         </button>
@@ -197,20 +197,20 @@ const Navbar = () => {
                 </div>
             </div>
 
-            {/* Mobile/Tablet Dropdown Menu */}
+            {/* Mobile/Tablet Dropdown Menu - Improved sizing */}
             <div className={`lg:hidden mobile-menu transition-all duration-300 ease-in-out
                 ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}`}>
 
-                {/* Compact dropdown menu - Right aligned */}
+                {/* Compact dropdown menu - Right aligned with better mobile sizing */}
                 <div
-                    className={`absolute top-full right-4 w-64 sm:w-72 shadow-xl rounded-lg mt-1
+                    className={`absolute top-full right-4 sm:right-6 md:right-4 w-72 sm:w-80 md:w-72 shadow-xl rounded-lg mt-2
                         transform transition-all duration-300 ease-in-out
                         ${isOpen ? 'translate-y-0 opacity-100 scale-100' : '-translate-y-2 opacity-0 scale-95'}
                         ${darkTheme ? 'bg-black/95 backdrop-blur-lg border border-gray-800' : 'bg-[#faedcd]/95 backdrop-blur-lg border border-gray-200'}`}
                 >
-                    {/* Navigation Links */}
-                    <nav className="px-4 py-3">
-                        <ul className="flex flex-col space-y-1">
+                    {/* Navigation Links - Better mobile sizing */}
+                    <nav className="px-5 py-4 sm:px-6 sm:py-4 md:px-4 md:py-3">
+                        <ul className="flex flex-col space-y-2 sm:space-y-2 md:space-y-1">
                             {navLinks.map(({ id, href, name }, index) => (
                                 <li key={id}
                                     className={`transform transition-all duration-300 ease-out
@@ -220,13 +220,14 @@ const Navbar = () => {
                                     <a
                                         href={href}
                                         onClick={closeMenu}
-                                        className={`text-base block py-2.5 px-3 rounded-md transition-all duration-200
+                                        className={`text-lg sm:text-lg md:text-base block py-3 sm:py-3 md:py-2.5 px-4 sm:px-4 md:px-3 rounded-md transition-all duration-200
                                             ${darkTheme
                                                 ? 'text-white hover:text-[#A8E6CF] hover:bg-white/10'
                                                 : 'text-black hover:text-[#f79d65] hover:bg-black/10'
                                             }
                                             border-r-3 border-transparent hover:border-current
-                                            transform hover:translate-x-1 text-right`}
+                                            transform hover:translate-x-1 text-right touch-manipulation
+                                            min-h-[48px] sm:min-h-[48px] md:min-h-[44px] flex items-center justify-end`}
                                     >
                                         {name}
                                     </a>
