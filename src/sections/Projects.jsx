@@ -1,8 +1,6 @@
-import React, { Suspense } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import CanvasLoader from "../components/CanvasLoader";
-
 import { myProjects } from '../constants';
-import { useState } from "react";
 import { Canvas } from '@react-three/fiber';
 import { Center, OrbitControls } from '@react-three/drei';
 import DemoComp from '../components/DemoComp';
@@ -11,7 +9,19 @@ const projectCount = myProjects.length;
 
 const Projects = () => {
     const [pindex, setpindex] = useState(0);
+    const [isMobile, setIsMobile] = useState(false);
     const currentProject = myProjects[pindex];
+
+    // Detect mobile device
+    useEffect(() => {
+        const checkMobile = () => {
+            setIsMobile(window.innerWidth <= 768);
+        };
+
+        checkMobile();
+        window.addEventListener('resize', checkMobile);
+        return () => window.removeEventListener('resize', checkMobile);
+    }, []);
 
     const handleNavigation = (direction) => {
         setpindex((prevIndex) => {
@@ -22,6 +32,42 @@ const Projects = () => {
             }
         });
     };
+
+    // Mobile-specific settings
+    const getMobileSettings = () => {
+        if (isMobile) {
+            return {
+                scale: 1.5, // Slightly smaller scale for mobile
+                position: [0, -2, 0], // Adjusted position
+                ambientIntensity: Math.PI * 0.8, // Slightly dimmer ambient light
+                directionalPosition: [8, 8, 4], // Closer directional light
+                cameraSettings: {
+                    fov: 60, // Wider field of view for mobile
+                    maxPolarAngle: Math.PI / 2.2,
+                    enableZoom: true, // Allow pinch zoom on mobile
+                    enablePan: false, // Disable panning to prevent conflicts
+                    minDistance: 3,
+                    maxDistance: 8
+                }
+            };
+        }
+        return {
+            scale: 2,
+            position: [0, -3, 0],
+            ambientIntensity: Math.PI,
+            directionalPosition: [10, 10, 5],
+            cameraSettings: {
+                fov: 75,
+                maxPolarAngle: Math.PI / 2,
+                enableZoom: false,
+                enablePan: true,
+                minDistance: 5,
+                maxDistance: 15
+            }
+        };
+    };
+
+    const settings = getMobileSettings();
 
     return (
         <section className='c-space my-20' id='work'>
@@ -47,7 +93,7 @@ const Projects = () => {
                                 </div>
                             ))}
                         </div>
-                        <a className='flex items-center gap-2 cursor-pointer text-white-100 dark:text-white-600' href={currentProject.href} target='_blank' rel='noreffer'>
+                        <a className='flex items-center gap-2 cursor-pointer text-white-100 dark:text-white-600' href={currentProject.href} target='_blank' rel='noreferrer'>
                             <p>Check Live Site</p>
                             <img src="assets/arrow-up.png" alt="uparrow" className='w-3 h-3' />
                         </a>
@@ -56,7 +102,6 @@ const Projects = () => {
                         <button className='arrow-btn' onClick={() => handleNavigation('previous')}>
                             <img src="assets/left-arrow.png" alt="left" className='w-4 h-4' />
                         </button>
-                        {/* Counter Display */}
                         <div className='text-center text-black-300 dark:text-white text-sm'>
                             {`Project ${pindex + 1} of ${projectCount}`}
                         </div>
@@ -65,21 +110,79 @@ const Projects = () => {
                         </button>
                     </div>
                 </div>
-                <div className='border border-black-300 bg-black-200 rounded-lg h-96 md:h-full'>
-                    <Canvas>
-                        <ambientLight intensity={Math.PI} />
-                        <directionalLight position={[10, 10, 5]} />
+
+                {/* Enhanced Canvas container with better mobile styling */}
+                <div className={`border border-black-300 bg-black-200 rounded-lg ${isMobile
+                    ? 'h-[500px] min-h-[500px]' // Much taller container for mobile
+                    : 'h-96 md:h-full'
+                    }`}>
+                    <Canvas
+                        camera={{
+                            fov: settings.cameraSettings.fov,
+                            position: isMobile ? [0, 0, 3] : [0, 0, 5] // Closer camera on mobile
+                        }}
+                        gl={{
+                            antialias: true,
+                            alpha: true,
+                            powerPreference: "high-performance", // Better for mobile GPUs
+                        }}
+                        dpr={isMobile ? [1, 2] : [1, 2]} // Limit pixel ratio on mobile for performance
+                    >
+                        <ambientLight intensity={settings.ambientIntensity} />
+                        <directionalLight
+                            position={settings.directionalPosition}
+                            intensity={isMobile ? 0.8 : 1}
+                            castShadow={!isMobile} // Disable shadows on mobile for performance
+                        />
+
+                        {/* Add hemisphere light for better mobile lighting */}
+                        {isMobile && (
+                            <hemisphereLight
+                                args={['#ffffff', '#444444', 0.6]}
+                            />
+                        )}
+
                         <Center>
                             <Suspense fallback={<CanvasLoader />}>
-                                <group scale={2} position={[0, -3, 0]} rotation={[0, -0.1, 0]}>
+                                <group
+                                    scale={settings.scale}
+                                    position={settings.position}
+                                    rotation={[0, -0.1, 0]}
+                                >
                                     <DemoComp texture={currentProject.texture} />
                                 </group>
                             </Suspense>
                         </Center>
-                        <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false} />
+
+                        <OrbitControls
+                            maxPolarAngle={settings.cameraSettings.maxPolarAngle}
+                            enableZoom={settings.cameraSettings.enableZoom}
+                            enablePan={settings.cameraSettings.enablePan}
+                            minDistance={settings.cameraSettings.minDistance}
+                            maxDistance={settings.cameraSettings.maxDistance}
+                            // Mobile-specific touch settings
+                            touches={{
+                                ONE: isMobile ? 2 : 0, // Rotate with one finger on mobile
+                                TWO: isMobile ? 1 : 0  // Pan with two fingers on mobile
+                            }}
+                            // Smooth controls for mobile
+                            enableDamping={true}
+                            dampingFactor={0.1}
+                            rotateSpeed={isMobile ? 0.8 : 1}
+                            zoomSpeed={isMobile ? 0.8 : 1}
+                            // Start closer on mobile to show bigger model
+                            target={isMobile ? [0, -1, 0] : [0, 0, 0]}
+                        />
                     </Canvas>
                 </div>
             </div>
+
+            {/* Mobile-specific instructions */}
+            {isMobile && (
+                <div className="text-center mt-4 text-sm text-gray-500">
+                    <p>Pinch to zoom • Drag to rotate • Two fingers to pan</p>
+                </div>
+            )}
         </section>
     );
 };

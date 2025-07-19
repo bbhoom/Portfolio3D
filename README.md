@@ -3,7 +3,7 @@
 A visually stunning 3D portfolio website showcasing projects and skills using React and Three.js.
 
 ## 🌐 Live Demo
-[Visit the Live Website](https://bbhoom.github.io/Portfolio3D)
+[Visit the Live Website](https://bbhoom.github.io/Bhoomika_K_S)
 
 ## 📦 Features
 - **Interactive 3D Models**: Immersive Three.js integration.
@@ -31,7 +31,7 @@ Portfolio3D/
 ## 🔧 Installation and Usage
 1. Clone the repository:
    ```bash
-   git clone https://github.com/bbhoom/Portfolio3D.git
+   git clone https://github.com/bbhoom/Bhoomika_K_S.git
    cd Portfolio3D
    ```
 2. Install dependencies:

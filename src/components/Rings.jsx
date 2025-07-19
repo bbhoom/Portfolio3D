@@ -11,7 +11,7 @@ const Rings = ({ position }) => {
         }
     }, []);
 
-    const texture = useTexture('/Portfolio3D/textures/rings.png');
+    const texture = useTexture('/Bhoomika_K_S/textures/rings.png');
 
     useGSAP(
         () => {

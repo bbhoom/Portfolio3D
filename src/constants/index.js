@@ -36,24 +36,24 @@ export const myProjects = [
         subdesc:
             'Built with Python and MySQL, The backend utilizes Python and MySQL with a database comprising three tables: Users, Languages, and Language-Keys. A simple, efficient interface ensures easy access to personalized encryption tools.',
         href: 'https://github.com/bbhoom/codeleza-encryption-tool',
-        texture: '/Portfolio3D/textures/project/project1.mp4',
-        logo: '/Portfolio3D/assets/project-logo1.png',
+        texture: '/Bhoomika_K_S/textures/project/project1.mp4',
+        logo: '/Bhoomika_K_S/assets/project-logo1.png',
         logoStyle: {
             backgroundColor: '#2A1816',
             border: '0.2px solid #36201D',
             boxShadow: '0px 0px 60px 0px #AA3C304D',
         },
-        spotlight: '/Portfolio3D/assets/spotlight1.png',
+        spotlight: '/Bhoomika_K_S/assets/spotlight1.png',
         tags: [
             {
                 id: 1,
                 name: 'Python',
-                path: '/Portfolio3D/assets/Python-logo.webp',
+                path: '/Bhoomika_K_S/assets/Python-logo.webp',
             },
             {
                 id: 2,
                 name: 'SQL',
-                path: '/Portfolio3D/assets/sql.png',
+                path: '/Bhoomika_K_S/assets/sql.png',
             },
         ],
     },
@@ -62,24 +62,24 @@ export const myProjects = [
         desc: 'BudgetApp is an intuitive budgeting app built with React and Bootstrap, designed to make managing personal finances simple and efficient. It empowers users to track expenses, set savings goals, and analyze spending patterns with ease.',
         subdesc: "With BudgetApp, users can enjoy a seamless, responsive interface that combines React's dynamic capabilities with Bootstrap's sleek design, making financial planning straightforward and accessible.",
         href: 'https://github.com/bbhoom/BudgetApp',
-        texture: '/Portfolio3D/textures/project/project2.mp4',
-        logo: '/Portfolio3D/assets/project-logo2.png',
+        texture: '/Bhoomika_K_S/textures/project/project2.mp4',
+        logo: '/Bhoomika_K_S/assets/project-logo2.png',
         logoStyle: {
             backgroundColor: '#13202F',
             border: '0.2px solid #17293E',
             boxShadow: '0px 0px 60px 0px #2F6DB54D',
         },
-        spotlight: '/Portfolio3D/assets/spotlight2.png',
+        spotlight: '/Bhoomika_K_S/assets/spotlight2.png',
         tags: [
             {
                 id: 1,
                 name: 'React.js',
-                path: '/Portfolio3D/assets/react.svg',
+                path: '/Bhoomika_K_S/assets/react.svg',
             },
             {
                 id: 2,
                 name: 'BootstrapCSS',
-                path: '/Portfolio3D/assets/bootstrap.png',
+                path: '/Bhoomika_K_S/assets/bootstrap.png',
             },
         ],
     },
@@ -89,8 +89,8 @@ export const myProjects = [
         subdesc: 'Built with Pygame in python, this project showcases smooth animations, responsive controls, and a touch of retro charm, offering both entertainment and a demonstration of game development skills.',
 
         href: 'https://github.com/bbhoom/Pac-man-Game',
-        texture: '/Portfolio3D/textures/project/project3.mp4',
-        logo: '/Portfolio3D/assets/project-logo3.png',
+        texture: '/Bhoomika_K_S/textures/project/project3.mp4',
+        logo: '/Bhoomika_K_S/assets/project-logo3.png',
         logoStyle: {
             backgroundColor: '#60f5a1',
             background:
@@ -98,12 +98,12 @@ export const myProjects = [
             border: '0.2px solid rgba(208, 213, 221, 1)',
             boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
         },
-        spotlight: '/Portfolio3D/assets/spotlight3.png',
+        spotlight: '/Bhoomika_K_S/assets/spotlight3.png',
         tags: [
             {
                 id: 1,
                 name: 'Python',
-                path: '/Portfolio3D/assets/Python-logo.webp',
+                path: '/Bhoomika_K_S/assets/Python-logo.webp',
             },
             ,
         ],
@@ -114,24 +114,24 @@ export const myProjects = [
         subdesc: 'Leveraging the power of Unity and C#, this project features immersive environments, fluid character movements, and a faithful recreation of the beloved arcade classic, showcasing advanced game development techniques.',
 
         href: 'https://github.com/bbhoom/Donkey-Kong',
-        texture: '/Portfolio3D/textures/project/project4.mp4',
-        logo: '/Portfolio3D/assets/project-logo4.png',
+        texture: '/Bhoomika_K_S/textures/project/project4.mp4',
+        logo: '/Bhoomika_K_S/assets/project-logo4.png',
         logoStyle: {
             backgroundColor: '#0E1F38',
             border: '0.2px solid #0E2D58',
             boxShadow: '0px 0px 60px 0px #2F67B64D',
         },
-        spotlight: '/Portfolio3D/assets/spotlight4.png',
+        spotlight: '/Bhoomika_K_S/assets/spotlight4.png',
         tags: [
             {
                 id: 1,
                 name: 'C#',
-                path: '/Portfolio3D/assets/c.png',
+                path: '/Bhoomika_K_S/assets/c.png',
             },
             {
                 id: 2,
                 name: 'Unity',
-                path: '/Portfolio3D/assets/unity.png',
+                path: '/Bhoomika_K_S/assets/unity.png',
             },
         ],
     },
@@ -140,8 +140,8 @@ export const myProjects = [
         desc: 'PlagiarismPro is a powerful application designed to accurately detect and visualize plagiarism. It analyzes text input against online sources using advanced algorithms and presents results with clear, intuitive visualizations.',
         subdesc: 'Built with a React frontend featuring react-gauge-chart for dynamic visual feedback, and a Django backend utilizing BeautifulSoup, Selenium, and Scikit-Learn for TF-IDF and cosine similarity calculations, PlagiarismPro leverages the Google Custom Search API to deliver precise and efficient plagiarism detection.',
         href: 'https://github.com/bbhoom/Plagarism-Detector',
-        texture: '/Portfolio3D/textures/project/project6.mp4',
-        logo: '/Portfolio3D/assets/project-logo6.png',
+        texture: '/Bhoomika_K_S/textures/project/project6.mp4',
+        logo: '/Bhoomika_K_S/assets/project-logo6.png',
         logoStyle: {
             backgroundColor: '#60f5a1',
             background:
@@ -149,22 +149,22 @@ export const myProjects = [
             border: '0.2px solid rgba(208, 213, 221, 1)',
             boxShadow: '0px 0px 60px 0px rgba(35, 131, 96, 0.3)',
         },
-        spotlight: '/Portfolio3D/assets/spotlight3.png',
+        spotlight: '/Bhoomika_K_S/assets/spotlight3.png',
         tags: [
             {
                 id: 1,
                 name: 'Python',
-                path: '/Portfolio3D/assets/Python-logo.webp',
+                path: '/Bhoomika_K_S/assets/Python-logo.webp',
             },
             {
                 id: 2,
                 name: 'React.js',
-                path: '/Portfolio3D/assets/react.svg',
+                path: '/Bhoomika_K_S/assets/react.svg',
             },
             {
                 id: 3,
                 name: 'Django',
-                path: '/Portfolio3D/assets/django.png',
+                path: '/Bhoomika_K_S/assets/django.png',
             },
         ],
     },
@@ -173,24 +173,24 @@ export const myProjects = [
         desc: 'Talk-Tuah Therapist is an AI-driven application designed to offer empathetic and personalized mental health support. It uses advanced AI to understand user emotions and provide thoughtful guidance for emotional well-being.',
         subdesc: 'Developed with Python, Streamlit, and the GeminiAI API, Talk-Tuah Therapist delivers an accessible and user-friendly platform, bringing mental health support to your fingertips.',
         href: 'https://github.com/cupnoodles7/talk_tuah_therapist',
-        texture: '/Portfolio3D/textures/project/project5.mp4',
-        logo: '/Portfolio3D/assets/project-logo5.png',
+        texture: '/Bhoomika_K_S/textures/project/project5.mp4',
+        logo: '/Bhoomika_K_S/assets/project-logo5.png',
         logoStyle: {
             backgroundColor: '#1C1A43',
             border: '0.2px solid #252262',
             boxShadow: '0px 0px 60px 0px #635BFF4D',
         },
-        spotlight: '/Portfolio3D/assets/spotlight5.png',
+        spotlight: '/Bhoomika_K_S/assets/spotlight5.png',
         tags: [
             {
                 id: 1,
                 name: 'Python',
-                path: '/Portfolio3D/assets/Python-logo.webp',
+                path: '/Bhoomika_K_S/assets/Python-logo.webp',
             },
             {
                 id: 2,
                 name: 'TailwindCSS',
-                path: '/Portfolio3D/assets/streamlit.png',
+                path: '/Bhoomika_K_S/assets/streamlit.png',
             },
         ],
     },
@@ -199,24 +199,24 @@ export const myProjects = [
         desc: 'AI Resume Builder is an intelligent application designed to streamline resume creation with personalized content suggestions. It asks you questions to understand career goals and generate professional resume content tailored to specific job applications.',
         subdesc: 'Developed with Python, Streamlit, and the Cohere API, AI Resume Builder delivers an accessible and user-friendly platform, bringing professional resume assistance to your fingertips.',
         href: 'https://github.com/bbhoom/AI-Resume-Friend',
-        texture: '/Portfolio3D/textures/project/project7.mp4',
-        logo: '/Portfolio3D/assets/project-logo7.png',
+        texture: '/Bhoomika_K_S/textures/project/project7.mp4',
+        logo: '/Bhoomika_K_S/assets/project-logo7.png',
         logoStyle: {
             backgroundColor: '#1C1A43',
             border: '0.2px solid #252262',
             boxShadow: '0px 0px 60px 0px #635BFF4D',
         },
-        spotlight: '/Portfolio3D/assets/spotlight5.png',
+        spotlight: '/Bhoomika_K_S/assets/spotlight5.png',
         tags: [
             {
                 id: 1,
                 name: 'Python',
-                path: '/Portfolio3D/assets/Python-logo.webp',
+                path: '/Bhoomika_K_S/assets/Python-logo.webp',
             },
             {
                 id: 2,
                 name: 'TailwindCSS',
-                path: '/Portfolio3D/assets/streamlit.png',
+                path: '/Bhoomika_K_S/assets/streamlit.png',
             },
         ],
     },

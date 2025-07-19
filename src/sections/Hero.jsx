@@ -71,27 +71,47 @@ const Hero = () => {
                 </p>
             </div>
 
-            {/* Spline 3D Model with Loader */}
+            {/* Spline 3D Model with Loader - Improved mobile scaling and positioning */}
             <div className="absolute w-full h-full bottom-[11%] flex justify-center items-center z-20">
                 {/* Loading spinner */}
                 {modelLoading && (
                     <div className="absolute top-3/4 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-30">
-                        <div className={`w-16 h-16 border-4 border-t-4 ${darkTheme ? 'border-gray-800 border-t-blue-500' : 'border-gray-200 border-t-blue-600'} rounded-full animate-spin`}></div>
-                        <p className={`mt-4 font-medium text-center ${darkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Loading 3D Model...</p>
+                        <div className={`${isSmall ? 'w-12 h-12 border-3' : 'w-16 h-16 border-4'} border-t-4 ${darkTheme ? 'border-gray-800 border-t-blue-500' : 'border-gray-200 border-t-blue-600'} rounded-full animate-spin`}></div>
+                        <p className={`mt-4 font-medium text-center ${isSmall ? 'text-sm' : 'text-base'} ${darkTheme ? 'text-gray-300' : 'text-gray-700'}`}>Loading 3D Model...</p>
                     </div>
                 )}
                 <Spline
                     scene="https://draft.spline.design/Ln0E2BXuZkkOuhxz/scene.splinecode"
-                    style={{ transform: "scale(0.6)", marginTop: "282px" }}
+                    style={{
+                        transform: isSmall
+                            ? "scale(0.4)"
+                            : isMobile
+                                ? "scale(0.5)"
+                                : "scale(0.6)",
+                        marginTop: isSmall
+                            ? "200px"
+                            : isMobile
+                                ? "240px"
+                                : "282px"
+                    }}
                     onLoad={handleModelLoad}
                 />
             </div>
 
-            {/* Custom 3D Models */}
+            {/* Custom 3D Models - Optimized for mobile performance */}
             <div className="absolute w-full h-full top-0 flex justify-center items-center z-10">
-                <Canvas camera={{ position: [0, 2, 10], fov: 50 }}>
-                    <ambientLight intensity={1} />
-                    <directionalLight position={[0, 5, 5]} intensity={1.5} />
+                <Canvas
+                    camera={{
+                        position: [0, 2, 10],
+                        fov: isMobile ? 60 : 50
+                    }}
+                    gl={{
+                        antialias: !isMobile,
+                        powerPreference: isMobile ? "low-power" : "high-performance"
+                    }}
+                >
+                    <ambientLight intensity={isMobile ? 0.8 : 1} />
+                    <directionalLight position={[0, 5, 5]} intensity={isMobile ? 1.2 : 1.5} />
 
                     <group>
                         <Target position={sizes.targetPosition} />
@@ -100,20 +120,41 @@ const Hero = () => {
                         <Rings position={sizes.ringPosition} />
                     </group>
 
-                    <OrbitControls />
+                    <OrbitControls
+                        enableZoom={!isMobile}
+                        enablePan={!isMobile}
+                        enableRotate={!isSmall}
+                        enableDamping={true}
+                        dampingFactor={0.1}
+                        maxPolarAngle={Math.PI / 2}
+                    />
                 </Canvas>
             </div>
 
-            <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-4 flex-wrap z-10 px-8">
-                <a href="#contact">
-                    <Button isBeam name="Let's work together"
-                        className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 shadow-lg transform hover:-translate-y-1 hover:shadow-xl`}
+            {/* Action Buttons - Mobile optimized layout */}
+            <div className={`absolute left-0 right-0 flex justify-center z-10 ${isMobile
+                ? 'bottom-4 px-4 gap-3 flex-col items-center'
+                : 'bottom-2 px-8 gap-4 flex-wrap'
+                }`}>
+                <a href="#contact" className={isMobile ? "w-full max-w-xs" : ""}>
+                    <Button
+                        isBeam
+                        name="Let's work together"
+                        className={`${isMobile
+                            ? 'w-full px-6 py-3 text-sm'
+                            : 'px-6 py-3'
+                            } rounded-2xl font-semibold transition-all duration-300 shadow-lg transform hover:-translate-y-1 hover:shadow-xl`}
                     />
                 </a>
 
-                <a href="assets\Bhoomika_Resume.pdf" download>
-                    <Button isBeam name="Download Resume"
-                        className={`px-6 py-3 rounded-2xl font-semibold transition-all duration-300 shadow-lg transform hover:-translate-y-1 hover:shadow-xl`}
+                <a href="assets\Bhoomika_Resume.pdf" download className={isMobile ? "w-full max-w-xs" : ""}>
+                    <Button
+                        isBeam
+                        name="Download Resume"
+                        className={`${isMobile
+                            ? 'w-full px-6 py-3 text-sm'
+                            : 'px-6 py-3'
+                            } rounded-2xl font-semibold transition-all duration-300 shadow-lg transform hover:-translate-y-1 hover:shadow-xl`}
                     />
                 </a>
             </div>

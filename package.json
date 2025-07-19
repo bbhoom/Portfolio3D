@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://bbhoom.github.io/Portfolio3D",
+  "homepage": "https://bbhoom.github.io/Bhoomika_K_S",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
