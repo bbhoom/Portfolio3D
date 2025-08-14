@@ -63,7 +63,7 @@ const About = () => {
                         <div className="pt-4">
                             <p className="grid-headtext">Hi, I&#39;m Bhoomika K S</p>
                             <p className='grid-subtext mt-2'>
-                                A B.Tech student in Computer Science and Design Engineering with a GPA of 9.2.
+                                A B.Tech student in Computer Science and Design Engineering with a GPA of 9.3.
                                 I thrive on creating innovative solutions, from AI-powered tools to interactive games.
                             </p>
                         </div>
