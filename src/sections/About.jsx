@@ -178,7 +178,7 @@ const About = () => {
                                                 SDE Intern
                                             </p>
                                             <p className={`text-xs sm:text-sm font-medium ${darkTheme ? 'text-gray-400' : 'text-gray-600'}`}>
-                                                June 2024 - Present
+                                                May 2025 - Aug 2025
                                             </p>
                                         </div>
                                     </div>
